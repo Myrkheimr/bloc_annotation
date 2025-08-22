@@ -1,8 +1,0 @@
-builders:
-  bloc_annotation_gen:
-    import: "package:bloc_annotation_gen/builder.dart"
-    builder_factories: ["cubitBuilder"]
-    build_extensions: {".dart": [".g.dart"]}
-    auto_apply: dependents
-    build_to: cache
-    applies_builders: ["source_gen|combining_builder"]

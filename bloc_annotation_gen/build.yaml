@@ -1,10 +1,14 @@
+builders:
+  bloc_annotation_gen:
+    import: "package:bloc_annotation_gen/builder.dart"
+    builder_factories: ["cubitBuilder"]
+    build_extensions: {".dart": ["cubit.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+
 targets:
   $default:
     builders:
       bloc_annotation_gen:
-        generate_for:
-          exclude:
-            - test
-            - example
-          # include:
-          #   - test/generators/*
+        enabled: true

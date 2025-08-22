@@ -7,7 +7,7 @@ class CubitGenerator extends GeneratorForAnnotation<CubitClass> {
   const CubitGenerator();
 
   @override
-  generateForAnnotatedElement(
+  String generateForAnnotatedElement(
     Element element,
     ConstantReader annotation,
     BuildStep buildStep,
@@ -20,14 +20,16 @@ class CubitGenerator extends GeneratorForAnnotation<CubitClass> {
       );
     }
 
-    final mixinName = '_\$${element.name}';
+    final classElement = element as ClassElement;
+
+    final name = '_\$${classElement.name}';
+
+    final stateType = 'int';
 
     return '''
-import 'package:bloc/bloc.dart';
-
-mixin class $mixinName<T> extends Cubit<T> {
-  $mixinName(T initialState) : super(initialState);
-}
-''';
+    class $name extends Cubit<$stateType> {
+      $name(super.initialState);
+    }
+    ''';
   }
 }
