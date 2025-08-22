@@ -1,5 +1,5 @@
 builders:
-  bloc_annotation_gen:
+  cubit_builder:
     import: "package:bloc_annotation_gen/builder.dart"
     builder_factories: ["cubitBuilder"]
     build_extensions: {".dart": ["cubit.g.part"]}
@@ -7,8 +7,38 @@ builders:
     build_to: cache
     applies_builders: ["source_gen|combining_builder"]
 
+  state_builder:
+    import: "package:bloc_annotation_gen/builder.dart"
+    builder_factories: ["stateBuilder"]
+    build_extensions: {".dart": ["state.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+
+  event_builder:
+    import: "package:bloc_annotation_gen/builder.dart"
+    builder_factories: ["eventBuilder"]
+    build_extensions: {".dart": ["event.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+
+  bloc_builder:
+    import: "package:bloc_annotation_gen/builder.dart"
+    builder_factories: ["blocBuilder"]
+    build_extensions: {".dart": ["bloc.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+
 targets:
   $default:
     builders:
-      bloc_annotation_gen:
+      cubit_builder:
+        enabled: true
+      state_builder:
+        enabled: true
+      event_builder:
+        enabled: true
+      bloc_builder:
         enabled: true

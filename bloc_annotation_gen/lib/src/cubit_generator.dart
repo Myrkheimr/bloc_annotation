@@ -15,7 +15,7 @@ class CubitGenerator extends GeneratorForAnnotation<CubitClass> {
     if (element.kind != ElementKind.CLASS) {
       throw InvalidGenerationSource(
         'CubitGenerator cannot target `${element.name}`. '
-        'Only classes can be annotated with @cubit.',
+        'Only classes can be annotated with @CubitClass.',
         element: element,
       );
     }

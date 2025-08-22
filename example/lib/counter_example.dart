@@ -21,15 +21,10 @@ void run() {
   bool exit = false;
 
   while (!exit) {
-    io.stdout.writeln('\x1B[2J\x1B[0;0H');
+    io.stdout.writeln('\x1B[2J\x1B[0;0H'); // clear screen
+    io.stdout.writeln("Counter: ${counter.state}");
     io.stdout.writeln(
-      "Counter: ${counter.state}"
-      ""
-      "Enter 'q' to quit"
-      "Enter 'a' to increment counter"
-      "Enter 'd' to decrement counter"
-      "Enter 'r' to reset counter."
-      "",
+      "Enter 'q' to quit, 'a' to increment, 'd' to decrement, 'r' to reset",
     );
 
     final input = io.stdin.readLineSync() ?? "";

@@ -12,9 +12,21 @@
 /// details, and `build.yaml` for how these builders are configured by default.
 library;
 
+import 'package:bloc_annotation_gen/src/bloc_generator.dart';
 import 'package:bloc_annotation_gen/src/cubit_generator.dart';
+import 'package:bloc_annotation_gen/src/event_generator.dart';
+import 'package:bloc_annotation_gen/src/state_generator.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
 Builder cubitBuilder(BuilderOptions options) =>
     SharedPartBuilder(const [CubitGenerator()], 'cubit');
+
+Builder stateBuilder(BuilderOptions options) =>
+    SharedPartBuilder(const [StateGenerator()], 'state');
+
+Builder eventBuilder(BuilderOptions options) =>
+    SharedPartBuilder(const [EventGenerator()], 'event');
+
+Builder blocBuilder(BuilderOptions options) =>
+    SharedPartBuilder(const [BlocGenerator()], 'bloc');

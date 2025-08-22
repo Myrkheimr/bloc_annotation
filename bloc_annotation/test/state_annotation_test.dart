@@ -11,11 +11,6 @@ void main() {
       expect(annotation.copyWith, isTrue);
     });
 
-    test('should initialize with custom name', () {
-      const annotation = StateClass(name: 'TestState');
-      expect(annotation.name, equals("TestState"));
-    });
-
     test('should override overrideToString parameter', () {
       const annotation = StateClass(overrideToString: false);
       expect(annotation.overrideToString, isFalse);
@@ -27,13 +22,8 @@ void main() {
     });
 
     test('should override customizable parameters', () {
-      const annotation = StateClass(
-        name: "MyState",
-        overrideToString: false,
-        copyWith: false,
-      );
+      const annotation = StateClass(overrideToString: false, copyWith: false);
 
-      expect(annotation.name, equals("MyState"));
       expect(annotation.overrideToString, isFalse);
       expect(annotation.copyWith, isFalse);
     });
