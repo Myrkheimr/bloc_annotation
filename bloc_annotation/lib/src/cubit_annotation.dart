@@ -5,5 +5,3 @@ import 'package:meta/meta_meta.dart';
 class CubitClass extends BaseAnnotation {
   const CubitClass({super.name, super.overrideToString});
 }
-
-const cubit = CubitClass();

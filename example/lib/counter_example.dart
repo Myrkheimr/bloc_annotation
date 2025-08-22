@@ -4,12 +4,12 @@ import 'package:bloc_annotation/bloc_annotation.dart';
 
 part 'counter_example.g.dart';
 
-@cubit
+@CubitClass()
 final class _CounterCubit extends _$_CounterCubit {
   _CounterCubit() : super(0);
 
-  void increment() => emit(this.state + 1);
-  void decrement() => emit(this.state - 1);
+  void increment() => emit(state + 1);
+  void decrement() => emit(state - 1);
   void reset() => emit(0);
 }
 

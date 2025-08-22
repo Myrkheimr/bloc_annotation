@@ -10,18 +10,6 @@ void main() {
       expect(annotation.overrideToString, isTrue);
     });
 
-    test('shorthand should create with default value', () {
-      expect(cubit.name, isNull);
-      expect(cubit.overrideToString, isTrue);
-    });
-
-    test('shorthand & default initializer are equal', () {
-      const annotation = CubitClass();
-
-      expect(cubit.name, annotation.name);
-      expect(cubit.overrideToString, annotation.overrideToString);
-    });
-
     test('should initialize with custom name', () {
       const annotation = CubitClass(name: 'TestCubit');
       expect(annotation.name, equals("TestCubit"));

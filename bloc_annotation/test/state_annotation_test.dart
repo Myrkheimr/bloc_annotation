@@ -11,20 +11,6 @@ void main() {
       expect(annotation.copyWith, isTrue);
     });
 
-    test('shorthand should create with default value', () {
-      expect(state.name, isNull);
-      expect(state.overrideToString, isTrue);
-      expect(state.copyWith, isTrue);
-    });
-
-    test('shorthand & default initializer are equal', () {
-      const annotation = StateClass();
-
-      expect(state.name, annotation.name);
-      expect(state.overrideToString, annotation.overrideToString);
-      expect(state.copyWith, annotation.copyWith);
-    });
-
     test('should initialize with custom name', () {
       const annotation = StateClass(name: 'TestState');
       expect(annotation.name, equals("TestState"));

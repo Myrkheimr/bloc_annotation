@@ -8,5 +8,3 @@ class StateClass extends BaseAnnotation {
   /// Whether to generate copyWith method (enabled by default)
   final bool copyWith;
 }
-
-const state = StateClass();
