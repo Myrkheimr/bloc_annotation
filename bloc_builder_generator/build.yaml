@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      bloc_builder_generator:
+        generate_for:
+          exclude:
+            - test
+            - example
+          # include:
+          #   - test/generators/*
