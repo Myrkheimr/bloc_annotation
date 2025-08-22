@@ -1,4 +1,4 @@
-import 'package:bloc_builder_generator/src/cubit_generator.dart';
+import 'package:bloc_annotation_gen/src/cubit_generator.dart';
 import 'package:source_gen_test/source_gen_test.dart';
 
 Future<void> main() async {

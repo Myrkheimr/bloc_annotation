@@ -1,7 +1,7 @@
 targets:
   $default:
     builders:
-      bloc_builder_generator:
+      bloc_annotation_gen:
         generate_for:
           exclude:
             - test

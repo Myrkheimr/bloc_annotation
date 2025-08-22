@@ -48,10 +48,10 @@ packages:
       relative: true
     source: path
     version: "0.1.0"
-  bloc_builder_generator:
+  bloc_annotation_gen:
     dependency: "direct dev"
     description:
-      path: "../bloc_builder_generator"
+      path: "../bloc_annotation_gen"
       relative: true
     source: path
     version: "0.1.0"

@@ -1,6 +1,6 @@
 builders:
-  bloc_builder_generator:
-    import: "package:bloc_builder_generator/builder.dart"
+  bloc_annotation_gen:
+    import: "package:bloc_annotation_gen/builder.dart"
     builder_factories: ["cubitBuilder"]
     build_extensions: {".dart": [".g.dart"]}
     auto_apply: dependents

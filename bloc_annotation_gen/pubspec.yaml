@@ -1,10 +1,10 @@
-name: bloc_builder_generator
+name: bloc_annotation_gen
 description: >-
   Code generator for Flutter BLoC pattern components including Cubit, BLoC, Event, 
   and State classes. Automatically generates type-safe boilerplate code from 
   reducing repetitive code and improving productivity.
 version: 0.1.0
-homepage: https://github.com/Myrkheimr/bloc_builder/tree/main/bloc_builder_generator
+homepage: https://github.com/Myrkheimr/bloc_builder/tree/main/bloc_annotation_gen
 repository: https://github.com/Myrkheimr/bloc_builder
 issue_tracker: https://github.com/Myrkheimr/bloc_builder/issues
 publish_to: none

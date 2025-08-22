@@ -12,7 +12,7 @@
 /// details, and `build.yaml` for how these builders are configured by default.
 library;
 
-import 'package:bloc_builder_generator/src/cubit_generator.dart';
+import 'package:bloc_annotation_gen/src/cubit_generator.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
