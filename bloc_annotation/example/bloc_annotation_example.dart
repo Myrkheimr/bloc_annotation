@@ -1,7 +1,7 @@
 import 'package:bloc_annotation/bloc_annotation.dart';
 
-@CubitClass()
+@CubitClass(state: int)
 final class CubitExample {}
 
-@CubitClass(name: "MyCustomCubit")
+@CubitClass(name: "MyCustomCubit", state: List<String>)
 final class NamedCubitExample {}

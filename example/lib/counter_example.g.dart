@@ -6,6 +6,6 @@ part of 'counter_example.dart';
 // CubitGenerator
 // **************************************************************************
 
-class _$_CounterCubit extends Cubit<int> {
+class _$_CounterCubit extends Cubit<List<int>> {
   _$_CounterCubit(super.initialState);
 }

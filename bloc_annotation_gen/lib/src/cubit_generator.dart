@@ -20,11 +20,11 @@ class CubitGenerator extends GeneratorForAnnotation<CubitClass> {
       );
     }
 
-    final classElement = element as ClassElement;
+    final customName = annotation.peek('name')?.stringValue;
 
-    final name = '_\$${classElement.name}';
+    final name = '_\$${customName ?? element.name}';
 
-    final stateType = 'int';
+    final stateType = annotation.peek('state')?.typeValue.getDisplayString();
 
     return '''
     class $name extends Cubit<$stateType> {

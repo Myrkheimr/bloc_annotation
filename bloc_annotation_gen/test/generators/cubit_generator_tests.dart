@@ -10,7 +10,7 @@ mixin class _$MyCubit<T> extends Cubit<T> {
   _$MyCubit(T initialState) : super(initialState);
 }
 ''')
-@CubitClass()
+@CubitClass(state: int)
 final class MyCubit {}
 
 // Error test cases (these should NOT generate, but throw errors)
@@ -19,33 +19,33 @@ final class MyCubit {}
 @ShouldThrow(
   'CubitGenerator cannot target `TestEnum`. Only classes can be annotated with @cubit.',
 )
-@CubitClass()
+@CubitClass(state: int)
 enum TestEnum { value1, value2 }
 
 // This should throw an error - function cannot be a cubit
 @ShouldThrow(
   'CubitGenerator cannot target `testFunction`. Only classes can be annotated with @cubit.',
 )
-@CubitClass()
+@CubitClass(state: int)
 void testFunction() {}
 
 // This should throw an error - variable cannot be a cubit
 @ShouldThrow(
   'CubitGenerator cannot target `testVariable`. Only classes can be annotated with @cubit.',
 )
-@CubitClass()
+@CubitClass(state: int)
 const String testVariable = 'test';
 
 // This should throw an error - typedef cannot be a cubit
 @ShouldThrow(
   'CubitGenerator cannot target `TestTypedef`. Only classes can be annotated with @cubit.',
 )
-@CubitClass()
+@CubitClass(state: int)
 typedef TestTypedef = void Function();
 
 // This should throw an error - mixin cannot be a cubit
 @ShouldThrow(
   'CubitGenerator cannot target `TestMixin`. Only classes can be annotated with @cubit.',
 )
-@CubitClass()
+@CubitClass(state: int)
 mixin TestMixin {}
