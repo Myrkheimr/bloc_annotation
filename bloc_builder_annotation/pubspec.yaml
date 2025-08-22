@@ -1,0 +1,23 @@
+name: bloc_builder_annotation
+description: Annotations for bloc_builder code generation package
+version: 0.1.0
+homepage: https://github.com/Myrkheimr/bloc_builder/tree/main/bloc_builder_annotation
+repository: https://github.com/Myrkheimr/bloc_builder
+issue_tracker: https://github.com/Myrkheimr/bloc_builder/issues
+
+topics:
+  - annotation
+  - bloc
+  - code-generation
+  - flutter
+  - dart
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  meta: ^1.17.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.3
