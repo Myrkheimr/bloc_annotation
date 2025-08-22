@@ -1,4 +1,4 @@
-import 'package:bloc_builder_annotation/bloc_builder_annotation.dart';
+import 'package:bloc_annotation/bloc_annotation.dart';
 import 'package:test/test.dart';
 
 void main() {

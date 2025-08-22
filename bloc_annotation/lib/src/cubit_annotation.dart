@@ -1,4 +1,4 @@
-import 'package:bloc_builder_annotation/src/base_annotation.dart';
+import 'package:bloc_annotation/src/base_annotation.dart';
 import 'package:meta/meta_meta.dart';
 
 @Target({TargetKind.classType})

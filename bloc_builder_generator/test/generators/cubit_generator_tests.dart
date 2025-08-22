@@ -1,6 +1,6 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'package:bloc_builder_annotation/bloc_builder_annotation.dart';
+import 'package:bloc_annotation/bloc_annotation.dart';
 import 'package:source_gen_test/source_gen_test.dart';
 
 @ShouldGenerate(r'''

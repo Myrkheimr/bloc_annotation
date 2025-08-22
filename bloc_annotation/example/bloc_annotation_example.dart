@@ -1,4 +1,4 @@
-import 'package:bloc_builder_annotation/bloc_builder_annotation.dart';
+import 'package:bloc_annotation/bloc_annotation.dart';
 
 @cubit
 final class CubitExample {}

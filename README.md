@@ -6,7 +6,7 @@
 
 ## Overview
 
-- **bloc_builder_annotation**  
+- **bloc_annotation**  
   Defines annotation classes (`@Bloc`, `@Event`, `@State` & `@Cubit`) used to mark BLoC-related elements in your Dart/Flutter codebase.
 
 - **bloc_builder**  
@@ -30,7 +30,7 @@ Add dependencies to your `pubspec.yaml`:
 
 ```yaml
     dependencies:
-    bloc_builder_annotation: ^0.1.0
+    bloc_annotation: ^0.1.0
 
     dev_dependencies:
     bloc_builder: ^0.1.0
