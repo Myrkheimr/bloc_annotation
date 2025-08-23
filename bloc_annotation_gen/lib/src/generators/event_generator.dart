@@ -6,7 +6,7 @@ import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
 class EventGenerator extends BaseGenerator<EventClass, Config> {
-  const EventGenerator();
+  const EventGenerator({super.config});
 
   @override
   String generateForAnnotatedElement(

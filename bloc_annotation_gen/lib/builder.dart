@@ -17,13 +17,13 @@ import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
 Builder cubitBuilder(BuilderOptions options) =>
-    SharedPartBuilder(const [CubitGenerator()], 'cubit');
+    SharedPartBuilder([CubitGenerator(config: options.config)], 'cubit');
 
 Builder stateBuilder(BuilderOptions options) =>
-    SharedPartBuilder(const [StateGenerator()], 'state');
+    SharedPartBuilder([StateGenerator(config: options.config)], 'state');
 
 Builder eventBuilder(BuilderOptions options) =>
-    SharedPartBuilder(const [EventGenerator()], 'event');
+    SharedPartBuilder([EventGenerator(config: options.config)], 'event');
 
 Builder blocBuilder(BuilderOptions options) =>
-    SharedPartBuilder(const [BlocGenerator()], 'bloc');
+    SharedPartBuilder([BlocGenerator(config: options.config)], 'bloc');

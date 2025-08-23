@@ -6,7 +6,7 @@ import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
 class CubitGenerator extends BaseGenerator<CubitClass, Config> {
-  const CubitGenerator();
+  const CubitGenerator({super.config});
 
   @override
   String generateForAnnotatedElement(
