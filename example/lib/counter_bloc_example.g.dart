@@ -33,6 +33,20 @@ abstract class _$CounterBloc extends Bloc<CounterEvent, List<int>> {
   FutureOr<void> _onReset(_$CounterEventReset event, Emitter<List<int>> emit) =>
       onReset(event, emit);
   FutureOr<void> onReset(_$CounterEventReset event, Emitter<List<int>> emit);
+
+  @override
+  String toString() {
+    return 'CounterBloc()';
+  }
+
+  @override
+  int get hashCode => Object.hashAll([]);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is CounterBloc;
+  }
 }
 
 // **************************************************************************
@@ -41,12 +55,54 @@ abstract class _$CounterBloc extends Bloc<CounterEvent, List<int>> {
 
 class _$CounterEventIncremented extends CounterEvent {
   const _$CounterEventIncremented();
+
+  @override
+  String toString() {
+    return 'CounterEventIncremented()';
+  }
+
+  @override
+  int get hashCode => Object.hashAll([]);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is _$CounterEventIncremented;
+  }
 }
 
 class _$CounterEventDecremented extends CounterEvent {
   const _$CounterEventDecremented();
+
+  @override
+  String toString() {
+    return 'CounterEventDecremented()';
+  }
+
+  @override
+  int get hashCode => Object.hashAll([]);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is _$CounterEventDecremented;
+  }
 }
 
 class _$CounterEventReset extends CounterEvent {
   const _$CounterEventReset();
+
+  @override
+  String toString() {
+    return 'CounterEventReset()';
+  }
+
+  @override
+  int get hashCode => Object.hashAll([]);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is _$CounterEventReset;
+  }
 }

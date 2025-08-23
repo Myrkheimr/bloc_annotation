@@ -2,6 +2,7 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_annotation/bloc_annotation.dart';
 import 'package:bloc_annotation_gen/src/generators/base_generator.dart';
 import 'package:bloc_annotation_gen/src/types/config.dart';
+import 'package:bloc_annotation_gen/src/utils/class_utils.dart';
 import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
@@ -15,13 +16,14 @@ class StateGenerator extends BaseGenerator<StateClass, Config> {
     ConstantReader annotation,
     BuildStep buildStep,
   ) {
-    if (element.kind != ElementKind.CLASS) {
-      throw InvalidGenerationSource(
-        'StateGenerator cannot target `${element.name}`. '
-        'Only classes can be annotated with @StateClass.',
-        element: element,
-      );
-    }
+    super.verifyElementKind(
+      expected: ElementKind.CLASS,
+      got: element.kind,
+      element: element,
+    );
+
+    final overrideToString = annotation.peek('overrideToString')!.boolValue;
+    final overrideEquality = annotation.peek('overrideEquality')!.boolValue;
 
     final buffer = StringBuffer();
 
@@ -49,23 +51,18 @@ class StateGenerator extends BaseGenerator<StateClass, Config> {
         buffer.writeln('  final ${p.type.getDisplayString()} ${p.name};');
       }
 
-      // copyWith if enabled
-      // if (annotation.peek('copyWith')?.boolValue ?? true) {
-      //   final copyParams = params
-      //       .map((p) {
-      //         final type = p.type.getDisplayString(withNullability: true);
-      //         return '$type? ${p.name}';
-      //       })
-      //       .join(', ');
-      //   final copyBody = params
-      //       .map((p) {
-      //         return '${p.name} ?? this.${p.name}';
-      //       })
-      //       .join(', ');
-      //   buffer.writeln(
-      //     '  $redirectName copyWith({$copyParams}) => $redirectName($copyBody);',
-      //   );
-      // }
+      final fields = params
+          .map((p) => (!p.isStatic && !p.isSynthetic) ? p.displayName : null)
+          .nonNulls;
+
+      if (overrideToString) {
+        ClassUtils.generateToString(buffer, redirectName, fields);
+      }
+
+      if (overrideEquality) {
+        ClassUtils.generateHashCode(buffer, fields);
+        ClassUtils.generateEquality(buffer, redirectName, fields);
+      }
 
       buffer.writeln('}');
       buffer.writeln();

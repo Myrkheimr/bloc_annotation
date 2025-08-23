@@ -2,6 +2,7 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_annotation/bloc_annotation.dart';
 import 'package:bloc_annotation_gen/src/generators/base_generator.dart';
 import 'package:bloc_annotation_gen/src/types/config.dart';
+import 'package:bloc_annotation_gen/src/utils/class_utils.dart';
 import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
@@ -15,25 +16,25 @@ class BlocGenerator extends BaseGenerator<BlocClass, Config> {
     ConstantReader annotation,
     BuildStep buildStep,
   ) {
-    if (element.kind != ElementKind.CLASS) {
-      throw InvalidGenerationSource(
-        'BlocGenerator cannot target `${element.name}`. '
-        'Only classes can be annotated with @BlocClass.',
-        element: element,
-      );
-    }
+    super.verifyElementKind(
+      expected: ElementKind.CLASS,
+      got: element.kind,
+      element: element,
+    );
 
-    final blocName = element.name;
+    final name = "_\$${element.name}";
     final stateType =
         annotation.peek('state')?.typeValue.getDisplayString() ?? 'dynamic';
     final eventType =
         annotation.peek('event')?.typeValue.getDisplayString() ?? 'dynamic';
+    final overrideToString = annotation.peek('overrideToString')!.boolValue;
+    final overrideEquality = annotation.peek('overrideEquality')!.boolValue;
 
     final buffer = StringBuffer();
 
     buffer.writeln(
-      'abstract class _\$$blocName extends Bloc<$eventType, $stateType> {'
-      '  _\$$blocName(super.initialState) {',
+      'abstract class $name extends Bloc<$eventType, $stateType> {'
+      '  $name(super.initialState) {',
     );
 
     final eventClass = annotation.peek('event')?.typeValue.element;
@@ -77,6 +78,19 @@ class BlocGenerator extends BaseGenerator<BlocClass, Config> {
         );
 
         buffer.writeln("\n");
+      }
+
+      final fields = (element as ClassElement).fields
+          .map((f) => (!f.isStatic && !f.isSynthetic) ? f.displayName : null)
+          .nonNulls;
+
+      if (overrideToString) {
+        ClassUtils.generateToString(buffer, name.substring(2), fields);
+      }
+
+      if (overrideEquality) {
+        ClassUtils.generateHashCode(buffer, fields);
+        ClassUtils.generateEquality(buffer, name.substring(2), fields);
       }
     }
 
