@@ -1,10 +1,11 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_annotation/bloc_annotation.dart';
+import 'package:bloc_annotation_gen/src/generators/base_generator.dart';
 import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
-class EventGenerator extends GeneratorForAnnotation<EventClass> {
+class EventGenerator extends BaseGenerator<EventClass, Config> {
   const EventGenerator();
 
   @override
@@ -72,3 +73,5 @@ class EventGenerator extends GeneratorForAnnotation<EventClass> {
     return buffer.toString();
   }
 }
+
+class Config {}

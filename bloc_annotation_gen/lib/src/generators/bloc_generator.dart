@@ -1,10 +1,12 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_annotation/bloc_annotation.dart';
+import 'package:bloc_annotation_gen/src/generators/base_generator.dart';
+import 'package:bloc_annotation_gen/src/types/config.dart';
 import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
-class BlocGenerator extends GeneratorForAnnotation<BlocClass> {
+class BlocGenerator extends BaseGenerator<BlocClass, Config> {
   const BlocGenerator();
 
   @override

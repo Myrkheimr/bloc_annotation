@@ -1,9 +1,11 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_annotation/bloc_annotation.dart';
+import 'package:bloc_annotation_gen/src/generators/base_generator.dart';
+import 'package:bloc_annotation_gen/src/types/config.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
-class CubitGenerator extends GeneratorForAnnotation<CubitClass> {
+class CubitGenerator extends BaseGenerator<CubitClass, Config> {
   const CubitGenerator();
 
   @override
