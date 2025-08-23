@@ -7,7 +7,7 @@ import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
-class StateGenerator extends BaseGenerator<StateClass, Config> {
+class StateGenerator extends BaseGenerator<StateClass, GeneratorConfig> {
   const StateGenerator({super.config});
 
   @override

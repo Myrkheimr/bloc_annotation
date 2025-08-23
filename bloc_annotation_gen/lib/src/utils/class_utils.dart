@@ -1,3 +1,5 @@
+import 'package:analyzer/dart/element/element.dart';
+
 abstract final class ClassUtils {
   /// Generates a `toString` method implementation.
   ///
@@ -68,5 +70,21 @@ abstract final class ClassUtils {
     buffer.write('int get hashCode => Object.hashAll([');
     buffer.write(fieldNames.join(', '));
     buffer.writeln(']);');
+  }
+
+  static Map<String, String> getFields(Element element) {
+    if (element.kind != ElementKind.CLASS) {
+      throw Exception(
+        '`ClassUtils.getFields` Expected [element] to be of type [class] got [${element.kind.displayName}]',
+      );
+    }
+
+    final classElem = element as ClassElement;
+
+    return {
+      for (final field in classElem.fields)
+        if (!field.isStatic && !field.isSynthetic)
+          field.displayName: field.type.getDisplayString(),
+    };
   }
 }

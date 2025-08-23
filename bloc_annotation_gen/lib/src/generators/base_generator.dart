@@ -1,4 +1,6 @@
 import 'package:analyzer/dart/element/element.dart';
+import 'package:bloc_annotation_gen/src/templates/templates.dart';
+import 'package:bloc_annotation_gen/src/types/config.dart';
 import 'package:source_gen/source_gen.dart';
 
 class BaseGenerator<A, C> extends GeneratorForAnnotation<A> {
@@ -21,5 +23,11 @@ class BaseGenerator<A, C> extends GeneratorForAnnotation<A> {
         element: element,
       );
     }
+  }
+
+  String generateTemplate(GeneratorConfig config) {
+    return switch (config) {
+      CubitConfig c => cubitTemplate(c),
+    };
   }
 }

@@ -7,7 +7,7 @@ import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
-class BlocGenerator extends BaseGenerator<BlocClass, Config> {
+class BlocGenerator extends BaseGenerator<BlocClass, GeneratorConfig> {
   const BlocGenerator({super.config});
 
   @override
