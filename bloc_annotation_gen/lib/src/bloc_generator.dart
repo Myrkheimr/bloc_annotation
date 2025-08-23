@@ -1,13 +1,8 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_annotation/bloc_annotation.dart';
+import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
-
-String _capitalize(String? input) {
-  if (input == null || input.isEmpty) return "";
-
-  return '${input[0].toUpperCase()}${input.substring(1)}';
-}
 
 class BlocGenerator extends GeneratorForAnnotation<BlocClass> {
   const BlocGenerator();
@@ -46,10 +41,10 @@ class BlocGenerator extends GeneratorForAnnotation<BlocClass> {
         final ctorName = f.name;
         final redirectName =
             f.redirectedConstructor?.enclosingElement.name ??
-            '_\$${eventClass.name}${_capitalize(ctorName)}';
+            '_\$${eventClass.name}${StringUtils.capitalizeFirstLetter(ctorName)}';
 
         final eventName = redirectName;
-        final methodName = 'on${_capitalize(ctorName)}';
+        final methodName = 'on${StringUtils.capitalizeFirstLetter(ctorName)}';
 
         buffer.writeln("    on<$eventName>(_$methodName);");
       }
@@ -66,10 +61,10 @@ class BlocGenerator extends GeneratorForAnnotation<BlocClass> {
         final ctorName = f.name;
         final redirectName =
             f.redirectedConstructor?.enclosingElement.name ??
-            '_\$${eventClass.name}${_capitalize(ctorName)}';
+            '_\$${eventClass.name}${StringUtils.capitalizeFirstLetter(ctorName)}';
 
         final eventName = redirectName;
-        final methodName = 'on${_capitalize(ctorName)}';
+        final methodName = 'on${StringUtils.capitalizeFirstLetter(ctorName)}';
 
         buffer.writeln(
           '  FutureOr<void> _$methodName($eventName event, Emitter<$stateType> emit) => $methodName(event, emit);',

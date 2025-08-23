@@ -1,13 +1,8 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_annotation/bloc_annotation.dart';
+import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
-
-String _capitalize(String? input) {
-  if (input == null || input.isEmpty) return "";
-
-  return '${input[0].toUpperCase()}${input.substring(1)}';
-}
 
 class EventGenerator extends GeneratorForAnnotation<EventClass> {
   const EventGenerator();
@@ -36,7 +31,7 @@ class EventGenerator extends GeneratorForAnnotation<EventClass> {
       final ctorName = factory.name; // "initial" or "loaded"
       final redirectName =
           factory.redirectedConstructor?.enclosingElement.name ??
-          '_\$${element.name}${_capitalize(ctorName)}';
+          '_\$${element.name}${StringUtils.capitalizeFirstLetter(ctorName)}';
 
       // collect parameters
       final params = factory.formalParameters;

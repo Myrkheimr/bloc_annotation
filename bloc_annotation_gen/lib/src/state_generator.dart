@@ -1,13 +1,8 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_annotation/bloc_annotation.dart';
+import 'package:bloc_annotation_gen/src/utils/string_utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
-
-String _capitalize(String? input) {
-  if (input == null || input.isEmpty) return "";
-
-  return '${input[0].toUpperCase()}${input.substring(1)}';
-}
 
 class StateGenerator extends GeneratorForAnnotation<StateClass> {
   const StateGenerator();
@@ -33,10 +28,10 @@ class StateGenerator extends GeneratorForAnnotation<StateClass> {
     final factories = classElement.constructors.where((c) => c.isFactory);
 
     for (final factory in factories) {
-      final ctorName = factory.name; // "initial" or "loaded"
+      final ctorName = factory.name;
       final redirectName =
           factory.redirectedConstructor?.enclosingElement.name ??
-          '_\$${element.name}${_capitalize(ctorName)}';
+          '_\$${element.name}${StringUtils.capitalizeFirstLetter(ctorName)}';
 
       // collect parameters
       final params = factory.formalParameters;
