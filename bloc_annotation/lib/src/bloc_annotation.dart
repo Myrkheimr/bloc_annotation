@@ -5,10 +5,14 @@ import 'package:meta/meta_meta.dart';
 class BlocClass extends BaseAnnotation {
   const BlocClass({
     super.overrideToString,
+    super.overrideEquality,
     required this.event,
     required this.state,
   });
 
+  /// Type of the event this bloc will be emitting
   final Type event;
+
+  /// Type of the state this bloc will be emitting
   final Type state;
 }

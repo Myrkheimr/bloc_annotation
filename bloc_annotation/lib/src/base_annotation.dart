@@ -1,10 +1,17 @@
+/// Base class for creating annotations with common options
 abstract class BaseAnnotation {
-  const BaseAnnotation({this.name, this.overrideToString = true});
-
-  /// Optional custom name for the generated class
-  /// If not provided, will use the annotated class name + 'Type' (Cubit, Bloc, Event, State)
-  final String? name;
+  const BaseAnnotation({
+    this.overrideToString = true,
+    this.overrideEquality = true,
+  });
 
   /// Whether to generate & override toString methods
+  ///
+  /// Defaults to `true`.
   final bool overrideToString;
+
+  /// Whether to override [hashCode] & equality operator [==]
+  ///
+  /// Defaults to `true`.
+  final bool overrideEquality;
 }

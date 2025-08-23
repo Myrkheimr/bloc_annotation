@@ -13,19 +13,19 @@ void main() {
     test('should create with default values', () {
       const annotation = CubitClass(state: int);
 
-      expect(annotation.name, isNull);
       expect(annotation.overrideToString, isTrue);
+      expect(annotation.overrideEquality, isTrue);
       expect(annotation.state, equals(int));
-    });
-
-    test('should initialize with custom name', () {
-      const annotation = CubitClass(name: 'TestCubit', state: int);
-      expect(annotation.name, equals("TestCubit"));
     });
 
     test('should override overrideToString parameter', () {
       const annotation = CubitClass(overrideToString: false, state: int);
       expect(annotation.overrideToString, isFalse);
+    });
+
+    test('should override overrideEquality parameter', () {
+      const annotation = CubitClass(overrideEquality: false, state: int);
+      expect(annotation.overrideEquality, isFalse);
     });
 
     test('should initializes with custom type', () {
@@ -35,13 +35,14 @@ void main() {
 
     test('should override customizable parameters', () {
       const annotation = CubitClass(
-        name: "MyCubit",
         overrideToString: false,
-        state: int,
+        overrideEquality: false,
+        state: Map<String, dynamic>,
       );
 
-      expect(annotation.name, equals("MyCubit"));
       expect(annotation.overrideToString, isFalse);
+      expect(annotation.overrideEquality, isFalse);
+      expect(annotation.state, equals(Map<String, dynamic>));
     });
   });
 }
