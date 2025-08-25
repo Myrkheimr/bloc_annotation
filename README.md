@@ -1,6 +1,6 @@
 # bloc_annotation
 
-**bloc_annotation** is a complementary package designed to streamline BLoC code generation for Dart and Flutter applications. By leveraging annotations and code generation, these packages accelerate BLoC implementation, reduce boilerplate code writing and aims to improve overall developer experience while working with BLoC.
+**bloc_annotation** is a complementary package designed to streamline BLoC code generation for Dart and Flutter applications. By leveraging code generation, this package accelerates development time & reduces boilerplate code writing and aims to improve overall developer experience while working with BLoC state management.
 
 ---
 
