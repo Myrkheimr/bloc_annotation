@@ -1,4 +1,4 @@
-/// Provides annotations used by [bloc_builder](https://pub.dev/packages/bloc_builder).
+/// Provides annotations used by [bloc_annotation](https://pub.dev/packages/bloc_annotation).
 library;
 
 export 'src/cubit_annotation.dart';

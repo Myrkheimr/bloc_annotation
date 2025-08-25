@@ -1,6 +1,6 @@
-# bloc_builder
+# bloc_annotation
 
-**bloc_builder** is a complementary package designed to streamline BLoC code generation for Dart and Flutter applications. By leveraging annotations and code generation, these packages accelerate BLoC implementation, reduce boilerplate code writing and aims to improve overall developer experience while working with BLoC.
+**bloc_annotation** is a complementary package designed to streamline BLoC code generation for Dart and Flutter applications. By leveraging annotations and code generation, these packages accelerate BLoC implementation, reduce boilerplate code writing and aims to improve overall developer experience while working with BLoC.
 
 ---
 
@@ -9,7 +9,7 @@
 - **bloc_annotation**  
   Defines annotation classes (`@Bloc`, `@Event`, `@State` & `@Cubit`) used to mark BLoC-related elements in your Dart/Flutter codebase.
 
-- **bloc_builder**  
+- **bloc_annotation_gen**  
   Provides a code generator that processes annotations (via source_gen/build_runner) and generates boilerplate BLoC, Event, and State code automatically.
 
 ---
@@ -33,7 +33,7 @@ Add dependencies to your `pubspec.yaml`:
     bloc_annotation: ^0.1.0
 
     dev_dependencies:
-    bloc_builder: ^0.1.0
+    bloc_annotation_gen: ^0.1.0
     build_runner: ^2.4.0
 ```
 
@@ -95,7 +95,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for guidelines.
 ## License
 
 MIT License.  
-See [`LICENSE`](https://github.com/Myrkheimr/bloc_builder) for details.
+See [`LICENSE`](https://github.com/Myrkheimr/bloc_annotation) for details.
 
 ---
 
