@@ -1,0 +1,16 @@
+name: bloc_annotation_workspace
+
+description: >-
+  Monorepo for bloc_annotation and bloc_annotation_generator packages with examples.
+
+environment:
+    sdk: ^3.9.2
+
+publish_to: none
+
+workspace:
+  - packages/bloc_annotation
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
