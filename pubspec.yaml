@@ -10,3 +10,4 @@ publish_to: none
 
 workspace:
   - packages/bloc_annotation
+  - packages/bloc_annotation_generator
