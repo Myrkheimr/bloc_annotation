@@ -6,18 +6,20 @@
   "packages": [
     {
       "name": "bloc_annotation_workspace",
-      "version": "1.0.0",
+      "version": "0.0.0",
       "dependencies": [],
-      "devDependencies": [
-        "lints",
-        "test"
-      ]
+      "devDependencies": []
     },
     {
       "name": "bloc_annotation",
       "version": "1.0.0",
-      "dependencies": [],
-      "devDependencies": []
+      "dependencies": [
+        "meta"
+      ],
+      "devDependencies": [
+        "lints",
+        "test"
+      ]
     },
     {
       "name": "test",
@@ -54,6 +56,11 @@
     {
       "name": "lints",
       "version": "6.0.0",
+      "dependencies": []
+    },
+    {
+      "name": "meta",
+      "version": "1.17.0",
       "dependencies": []
     },
     {
@@ -360,11 +367,6 @@
         "source_maps",
         "stack_trace"
       ]
-    },
-    {
-      "name": "meta",
-      "version": "1.17.0",
-      "dependencies": []
     },
     {
       "name": "glob",
