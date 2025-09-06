@@ -17,8 +17,6 @@ final class CubitAnnotationGenerator extends GeneratorForAnnotation {
       kind: ElementKind.CLASS,
     );
 
-    final ce = element as ClassElement;
-
-    return "";
+    return "Test";
   }
 }
