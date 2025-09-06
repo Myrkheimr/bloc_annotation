@@ -1,0 +1,23 @@
+targets:
+  $default:
+    builders:
+      cubit_builder:
+        enabled: true
+
+builders:
+  cubit_builder:
+    target: ":bloc_annotation_generator"
+    import: "package:bloc_annotation_generator/builders.dart"
+    builder_factories: ["cubitBuilder"]
+    build_extensions: {".dart": ["cubit.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+    defaults:
+      options:
+        run_only_if_triggered: true
+
+triggers:
+  bloc_annotation_generator:cubit_builder:
+    - import bloc_annotation/bloc_annotation.dart
+    - annotation CubitClass

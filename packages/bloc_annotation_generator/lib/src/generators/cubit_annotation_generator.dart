@@ -1,9 +1,11 @@
 import 'package:analyzer/dart/element/element.dart';
+import 'package:bloc_annotation/bloc_annotation.dart';
 import 'package:bloc_annotation_generator/src/utils/utils.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
-final class CubitAnnotationGenerator extends GeneratorForAnnotation {
+final class CubitAnnotationGenerator
+    extends GeneratorForAnnotation<CubitClass> {
   const CubitAnnotationGenerator();
 
   @override
@@ -17,6 +19,6 @@ final class CubitAnnotationGenerator extends GeneratorForAnnotation {
       kind: ElementKind.CLASS,
     );
 
-    return "Test";
+    return "void main (){}";
   }
 }
