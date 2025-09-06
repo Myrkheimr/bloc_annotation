@@ -26,6 +26,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "bloc",
+      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/bloc-9.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/boolean_selector-2.1.2",
       "packageUri": "lib/",
@@ -33,7 +39,7 @@
     },
     {
       "name": "build",
-      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/build-3.1.0",
+      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/build-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -50,26 +56,14 @@
       "languageVersion": "3.6"
     },
     {
-      "name": "build_resolvers",
-      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/build_resolvers-3.0.3",
-      "packageUri": "lib/",
-      "languageVersion": "3.7"
-    },
-    {
       "name": "build_runner",
-      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/build_runner-2.7.1",
-      "packageUri": "lib/",
-      "languageVersion": "3.7"
-    },
-    {
-      "name": "build_runner_core",
-      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/build_runner_core-9.3.1",
+      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/build_runner-2.8.0",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "build_test",
-      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/build_test-3.3.3",
+      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/build_test-3.4.0",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -303,13 +297,13 @@
     },
     {
       "name": "source_gen",
-      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/source_gen-3.1.0",
+      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/source_gen-4.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "source_gen_test",
-      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/source_gen_test-1.3.1",
+      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/source_gen_test-1.3.2",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -380,12 +374,6 @@
       "languageVersion": "3.5"
     },
     {
-      "name": "timing",
-      "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/timing-1.0.2",
-      "packageUri": "lib/",
-      "languageVersion": "3.4"
-    },
-    {
       "name": "typed_data",
       "rootUri": "file:///Users/maranix/.pub-cache/hosted/pub.dev/typed_data-1.4.0",
       "packageUri": "lib/",
@@ -448,6 +436,12 @@
     {
       "name": "bloc_annotation_generator",
       "rootUri": "../packages/bloc_annotation_generator",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
+      "name": "counter_cubit",
+      "rootUri": "../examples/counter_cubit",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     }
