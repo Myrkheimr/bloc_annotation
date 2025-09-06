@@ -19,6 +19,19 @@ final class CubitAnnotationGenerator
       kind: ElementKind.CLASS,
     );
 
-    return "void main (){}";
+    final ce = (element as ClassElement);
+
+    final className = ce.displayName;
+
+    final stateType = element
+        .typeParametersOfAnnotation<CubitClass>()
+        .map((t) => t.getDisplayString())
+        .firstOrNull;
+
+    return '''
+abstract interface class _\$$className extends Cubit<$stateType> {
+  _\$$className(super.initialState);
+}
+''';
   }
 }
